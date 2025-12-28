@@ -4,31 +4,34 @@ This UiPath project automates the process of finding, evaluating, and reporting 
 
 The project was developed as part of an internship project and demonstrates end-to-end HR automation using RPA and AI-assisted analysis.
 
----
-
 ## Overall Logic
 
 The automation follows these main steps:
 
-1. **Scraping Vacancies**  
-   IT-related job vacancies are scraped from the ABB careers website.
+## Workflow Overview
 
-2. **Generating Boolean Expressions**  
-   For each vacancy, GPT is used to generate a boolean search expression suitable for LinkedIn Recruiter Lite.
+The diagram below illustrates the high-level automation flow and decision logic.
+Detailed execution screenshots are not included to ensure data protection and platform compliance.
 
-3. **Searching for Candidates**  
-   The robot navigates to LinkedIn Recruiter Lite and performs candidate searches using the generated boolean expressions and predefined filters (e.g., location).
+<img width="900" alt="Automation Workflow" src="https://github.com/user-attachments/assets/895f1bd5-ca02-4ea4-8b5c-b19871d0c1e2" />
 
-4. **Scraping Candidate Profiles**  
-   Candidate profile information is extracted from the search results.
+### Scraping Vacancies
+IT-related job vacancies are scraped from the ABB careers website.
 
-5. **Grading Candidates**  
-   GPT evaluates each candidate against the vacancy requirements and assigns a score.
+### Generating Boolean Expressions
+For each vacancy, GPT is used to generate a boolean search expression suitable for LinkedIn Recruiter Lite.
 
-6. **Generating a Report**  
-   The automation produces an Excel report containing candidate details and evaluation results.
+### Searching for Candidates
+The robot navigates to LinkedIn Recruiter Lite and performs candidate searches using the generated boolean expressions and predefined filters (e.g., location).
 
----
+### Scraping Candidate Profiles
+Candidate profile information is extracted from the search results.
+
+### Grading Candidates
+GPT evaluates each candidate against the vacancy requirements and assigns a score.
+
+### Generating a Report
+The automation produces an Excel report containing candidate details and evaluation results.
 
 ## Workflows
 
@@ -72,44 +75,32 @@ The automation follows these main steps:
 - **ScrapingCandidateProfile.xaml**  
   Scrapes detailed information from individual candidate profiles.
 
----
-
 ## Configuration
 
-- External URLs (e.g., LinkedIn Recruiter entry point) are stored in configuration files or Orchestrator Assets.
-- Session-based or authenticated deep links are **not** hardcoded in the project.
-- No credentials or private tokens are stored in the repository.
-
----
+External URLs (e.g., LinkedIn Recruiter entry point) are stored in configuration files or Orchestrator Assets.  
+Session-based or authenticated deep links are not hardcoded in the project.  
+No credentials or private tokens are stored in the repository.
 
 ## Authentication & Access
 
-- A valid LinkedIn Recruiter Lite account is required to run this project.
-- Authentication is performed manually by the user at runtime.
-- The repository does **not** include login credentials, session URLs, or private LinkedIn links.
-
----
+A valid LinkedIn Recruiter Lite account is required to run this project.  
+Authentication is performed manually by the user at runtime.  
+The repository does not include login credentials, session URLs, or private LinkedIn links.
 
 ## AI Usage
 
 GPT is used for:
-- Boolean search generation
-- Candidate evaluation and scoring
+- Boolean search generation  
+- Candidate evaluation and scoring  
 
 All prompts are generated dynamically during execution.  
 No personal data is persisted outside the automation workflow.
 
-
----
 ## Demonstration
 
-Screenshots and execution examples are available in the internship presentation
-and are intentionally not included in this repository for data protection reasons.
-
----
+Screenshots and execution examples are available in the internship presentation and are intentionally not included in this repository for data protection reasons.
 
 ## Notes
 
 This repository focuses on automation logic and project structure.  
 Execution requires appropriate access rights and subscriptions that are not included in the repository.
-
