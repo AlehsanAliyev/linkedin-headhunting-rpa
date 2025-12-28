@@ -1,0 +1,402 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ScrapingCandidateProfile" this:ScrapingCandidateProfile.ProfileLink="[&quot;https://www.linkedin.com/talent/profile/AEMAADOyw-8Bo7ZarNABsUlU7slpgKWRZU9YYJs?project=1425894674&amp;trk=SEARCH_CONTEXTUAL&quot;&quot;https://www.linkedin.com/talent/profile/AEMAADOyw-8Bo7ZarNABsUlU7slpgKWRZU9YYJs?project=1425894674&amp;trk=SEARCH_CONTEXTUAL&quot;]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="strCandidateData" Type="OutArgument(x:String)" />
+    <x:Property Name="ProfileLink" Type="InArgument(x:String)" />
+    <x:Property Name="strLinkedInLink" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>969.3333333333334,5010</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ScrapingCandidateProfile_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ScrapingCandidateProfile" sap:VirtualizedContainerService.HintSize="610.6666666666666,4945.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strSummary" />
+      <Variable x:TypeArguments="sd:DataTable" Name="HonorAwards" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Certificates" />
+      <Variable x:TypeArguments="x:String" Name="strHonors" />
+      <Variable x:TypeArguments="x:String" Name="strCertificates" />
+      <Variable x:TypeArguments="x:String" Name="strExperience" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="x:String" Name="strRequirements" />
+      <Variable x:TypeArguments="x:String" Name="strName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: " sap:VirtualizedContainerService.HintSize="548.6666666666666,4572" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="514.6666666666666,4320.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452.6666666666667,382" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,270" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Text 'Kamran Aliyev'" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" TextString="[strName]" Version="V4">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADOyw-8Bo7ZarNABsUlU7slpgKWRZU9YYJs?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" CVScreenId="9886947d-a55b-4625-a34b-acddfe0b8883" DesignTimeRectangle="307, 459, 225, 48" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ember2173' tag='DIV' type='' class='artdeco-entity-lockup__title ember-view' /&gt;" Guid="29bfb17e-5aba-482a-8ab1-455edd2db7d4" ImageBase64="" InformativeScreenshot="7a0061049ec850a19141d974db451db1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Kamran Aliyev' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452.6666666666667,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[strName]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'See more of summary'" sap:VirtualizedContainerService.HintSize="452.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Timeout="8" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/hire/1425894674/discover/recruiterSearch/profile/AEMAAEZ3V5QBgo3jh7Upke5zmRDOzRI_xNETdjw?highlightedPatternSource=%255CbFront%255C-End%2520Development%255Cb%257C%255CbQuality%2520Assurance%255Cb%257C%255CbABB%255Cb&amp;project=1425894674&amp;searchContextId=c3fec6af-8554-4c7b-8249-62f41bd3f72c&amp;searchHistoryId=20383305538&amp;searchRequestId=a365bd48-9dd6-41ba-a637-e4690d43f6e3&amp;start=0&amp;trk=SEARCH_CONTEXTUAL&amp;uiOrigin=PAGINATION" CVScreenId="19aa03ae-c38a-43d7-9ae8-d2884dd87afb" CvTextArea="459, 368, 211, 24" CvTextArgument="See more of summary" CvType="Text" DesignTimeRectangle="461, 361, 209, 30" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='ember52574' tag='SPAN' type='' class='artdeco-button__text' aaname='     See more of summary ' check:innerText='See more of summary' /&gt;" Guid="afdf3e7e-1d9d-41d8-9061-9efbcb249e82" InformativeScreenshot="30f521f3b3df25ab7aae931b2f6ecd96.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='LinkedIn Talent Solutions' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="19aa03ae-c38a-43d7-9ae8-d2884dd87afb" CvTextArea="459, 368, 211, 24" CvTextArgument="See more of summary" CvType="Text" DesignTimeRectangle="449, 358, 233, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='ember52574' tag='BUTTON' type='button' class='artdeco-button artdeco-button--1 artdeco-button--tertiary ember-view decorated-line-clamp__see-more-button' aaname='      See more of summary ' check:innerText='See more of summary' /&gt;" Guid="fba5452b-b1c6-4a46-ab2a-11656e595437" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Summary'" sap:VirtualizedContainerService.HintSize="452.6666666666667,191.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" TextString="[strSummary]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/hire/1425894674/discover/recruiterSearch/profile/AEMAAEZ3V5QBgo3jh7Upke5zmRDOzRI_xNETdjw?highlightedPatternSource=%255CbFront%255C-End%2520Development%255Cb%257C%255CbQuality%2520Assurance%255Cb%257C%255CbABB%255Cb&amp;project=1425894674&amp;searchContextId=c3fec6af-8554-4c7b-8249-62f41bd3f72c&amp;searchHistoryId=20383305538&amp;searchRequestId=a365bd48-9dd6-41ba-a637-e4690d43f6e3&amp;start=0&amp;trk=SEARCH_CONTEXTUAL&amp;uiOrigin=PAGINATION" DesignTimeRectangle="419, 826, 1245, 348" DesignTimeScaleFactor="1.5" FuzzySelectorArgument="&lt;webctrl type='' parentid='profile-container' tag='SECTION' class='fGmXPXeHWwqfRwggVcCVZgmGXtXeiOgnsxSsHc summary-card' aaname='              ' /&gt;" Guid="2f7ecff8-7468-4ee1-8d75-d25edb895683" InformativeScreenshot="1ff862947ffa37261ed4b248bfe30a10.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='LinkedIn Talent Solutions' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="e2f87cb6-5d6e-4f47-be30-efe5724bb44e" DesignTimeRectangle="449, 856, 1185, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='profile-container' tag='H2' type='' class='rrTtOcDbxggRzIuVjQpcCgqDoyLKLJiKjkdc' aaname='Summary' check:innerText='Summary' /&gt;" Guid="7513d355-c749-4441-a61b-b606919f0499" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <Assign sap:VirtualizedContainerService.HintSize="452.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strSummary]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strSummary, "(.*?)mutual connections", System.Text.RegularExpressions.RegexOptions.Singleline).Groups(1).Value]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="IntermediateOutputs\About.txt" sap:VirtualizedContainerService.HintSize="452.6666666666667,168.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strSummary]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Show more'" sap:VirtualizedContainerService.HintSize="452.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Timeout="8" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADTNHwEBlC1vabz_drfVKRIecTbSRio0aVw?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" CVScreenId="c30fe47e-898a-48b4-a7ed-8d6baa204d18" DesignTimeRectangle="731, 383, 123, 36" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='     Show more ' class='artdeco-button__text' tag='SPAN' type='' check:innerText='Show more' /&gt;" Guid="589b416f-adc8-4ebf-a8d6-9e85ae6312c4" InformativeScreenshot="66f854e80ba84a7154f88985870500bb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zahid Abdullayev' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="c30fe47e-898a-48b4-a7ed-8d6baa204d18" CvElementArea="853, 838, 33, 26" CvTextArea="728, 840, 125, 22" CvTextArgument="Show more" CvType="ArrowButton" DesignTimeRectangle="719, 377, 174, 48" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Show more positions' tag='BUTTON' type='' class='artdeco-button artdeco-button--muted artdeco-button--icon-right artdeco-button--2 artdeco-button--tertiary ember-view expandable-list__button expandable-list__button--standard expandable-list__button--r4-visual-refresh' aaname='                       Show more ' check:innerText='Show more' /&gt;" Guid="0b10b116-d62e-4737-bd4a-590b4a21fa4b" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'UL'" sap:VirtualizedContainerService.HintSize="452.6666666666667,191.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" TextString="[strExperience]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADTNHwEBlC1vabz_drfVKRIecTbSRio0aVw?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" DesignTimeRectangle="103, 729, 1405, 3586" DesignTimeScaleFactor="1.5" FuzzySelectorArgument="&lt;webctrl type='' class='fGmXPXeHWwqfRwggVcCVZgmGXtXeiOgnsxSsHc rXPISKlCMXNLYpuriGYMovjvCwQjGshj' parentid='profile-container' tag='SECTION' aaname='                   ' /&gt;" Guid="afec69de-b919-4e65-8637-95d7272a282d" InformativeScreenshot="2789b16ca32fc73ba66a94d050693b96.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zahid Abdullayev' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="f120fd2c-42e2-40fb-a7e0-d579cf2000ed" DesignTimeRectangle="133, 759, 1345, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='FVGuwmssFoeJoUNCzYaFrkabkLjjFpFXUMmxqcA' parentid='profile-container' tag='H2' type='' aaname='         Experience       ' check:innerText='Experience' /&gt;" Guid="48d47531-28fe-4508-848a-f73f0af7ccca" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <Assign sap:VirtualizedContainerService.HintSize="452.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strExperience]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[strExperience.Replace(vbLf, "")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="452.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strExperience]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strExperience, "\s+", " ")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="IntermediateOutputs\Experience.txt" sap:VirtualizedContainerService.HintSize="452.6666666666667,168.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[strExperience]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="452.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Timeout="8" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADTNHwEBlC1vabz_drfVKRIecTbSRio0aVw?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" CVScreenId="1de57256-1b7b-46e3-93a4-3609fec2ebfb" DesignTimeRectangle="699, 1140, 213, 36" DesignTimeScaleFactor="1.5" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Show all * skills' tag='BUTTON' type='button' class='expandable-list__button expandable-list__button--r4-visual-refresh' aaname='*Show all * skills*' /&gt;" Guid="162d5daf-ed21-44a2-8a6c-1bf6f5dd3e0d" InformativeScreenshot="47589d5a5e07ad184db3bf3321d895e3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zahid Abdullayev' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="1de57256-1b7b-46e3-93a4-3609fec2ebfb" DesignTimeRectangle="133, 687, 130, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' parentid='profile-container' tag='H2' class='FVGuwmssFoeJoUNCzYaFrkabkLjjFpFXUMmxqcA rrTtOcDbxggRzIuVjQpcCgqDoyLKLJiKjkdc' aaname='         Skills (*)*' /&gt;" Guid="d919e811-4466-4d42-a684-40cee27fdafa" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Skill'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='dt' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="452.6666666666667,192" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Version="V4">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/hire/1425894674/discover/recruiterSearch/profile/AEMAACTYHv8BZaoctQh4sOjRADVS4FJlTmF8qI4?highlightedPatternSource=%255CbQA%2520Engineering%255Cb%257C%255CbABB%255Cb&amp;project=1425894674&amp;searchContextId=50c6114a-4d98-4ede-8659-185ad562459e&amp;searchHistoryId=20383305538&amp;searchRequestId=1acf43f9-ab51-4f8a-8f67-d72f52f802a0&amp;start=0&amp;trk=SEARCH_CONTEXTUAL&amp;uiOrigin=PAGINATION" DesignTimeRectangle="425, 526, 1209, 3564" DesignTimeScaleFactor="1.5" ElementType="List" FullSelectorArgument="&lt;webctrl class='YYPWbreQGAWsxxMqWJunUvwFQwdzAnmc' parentid='profile-container' tag='UL' /&gt;" Guid="0132ec69-acb4-4021-b4e4-480dee62511d" InformativeScreenshot="51d9a7c72446a092a72ae99a78670057.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='LinkedIn Talent Solutions' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <Assign sap:VirtualizedContainerService.HintSize="452.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strRequirements]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[String.Join(Environment.NewLine, ExtractDataTable.AsEnumerable().Select(Function(row) row("Skill").ToString()))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="IntermediateOutputs\Skills.txt" sap:VirtualizedContainerService.HintSize="452.6666666666667,168.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[strRequirements]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Show more'" sap:VirtualizedContainerService.HintSize="452.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Timeout="6" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADTNHwEBlC1vabz_drfVKRIecTbSRio0aVw?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" CVScreenId="8d8b37a4-437e-48ed-92fa-3c5fd419624f" DesignTimeRectangle="241, 1150, 108, 30" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='     Show more ' class='artdeco-button__text' type='' tag='SPAN' check:innerText='Show more' /&gt;" Guid="b7d7a575-a52a-47d1-a002-e35c5e6c2dce" InformativeScreenshot="b659efee9366f84c5004b4b74934b5fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zahid Abdullayev' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="8d8b37a4-437e-48ed-92fa-3c5fd419624f" DesignTimeRectangle="232, 912, 1246, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl isleaf='1' parentid='profile-container' tag='H3' type='' class='accomplishments-expandable-list__title t-16 t-bold' aaname='             Honors &amp;amp; Awards           ' check:innerText='Honors &amp;amp; Awards' /&gt;" Guid="0a41b42b-97ae-419a-94ae-88101897e326" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[HonorAwards]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Achievement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="452.6666666666667,192" sap2010:WorkflowViewState.IdRef="NExtractData_4" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Version="V4">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADTNHwEBlC1vabz_drfVKRIecTbSRio0aVw?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" DesignTimeRectangle="133, 492, 1345, 1049" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl class='accomplishments-expandable-list' parentid='profile-container' tag='DIV' /&gt;" Guid="cb6ca009-6c43-4cbf-b273-48ecb00a45db" InformativeScreenshot="b0224437006f0a552dd01ae934998d00.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zahid Abdullayev' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <Assign sap:VirtualizedContainerService.HintSize="452.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strHonors]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[String.Join(Environment.NewLine, HonorAwards.AsEnumerable().Select(Function(row) row("Achievement").ToString()))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Show more'" sap:VirtualizedContainerService.HintSize="452.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Timeout="6" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADTNHwEBlC1vabz_drfVKRIecTbSRio0aVw?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" CVScreenId="bcb8d02f-3ba6-420d-b8f9-5c588e0deb98" DesignTimeRectangle="241, 440, 108, 30" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='     Show more ' class='artdeco-button__text' type='' tag='SPAN' check:innerText='Show more' /&gt;" Guid="4a00ccc0-25cf-4efb-ad13-4eb9484d8e21" InformativeScreenshot="422cee271d33627a08ed69240d7f7b71.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zahid Abdullayev' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="bcb8d02f-3ba6-420d-b8f9-5c588e0deb98" DesignTimeRectangle="232, 166, 1246, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='profile-container' tag='H3' class='accomplishments-expandable-list__title t-16 t-bold' aaname='             Certifications           ' check:innerText='Certifications' /&gt;" Guid="f386af5b-dd13-43ee-ab93-6bf05d0088b8" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[Certificates]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Certificates'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='section' idx='3' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="452.6666666666667,192" sap2010:WorkflowViewState.IdRef="NExtractData_5" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" Version="V4">
+              <uix:NExtractData.NextLink>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADTNHwEBlC1vabz_drfVKRIecTbSRio0aVw?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" CVScreenId="6380bea0-986f-40c5-9dd8-22eec991dc32" CvElementArea="226, 970, 164, 59" CvType="InputBox" DesignTimeRectangle="241, 986, 108, 30" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='     Show more ' class='artdeco-button__text' idx='3' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='     Show more ' class='artdeco-button__text' type='' tag='SPAN' check:innerText='Show more' /&gt;" Guid="279db89d-cae4-4826-b96c-47e73ffb041c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zahid Abdullayev' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="6380bea0-986f-40c5-9dd8-22eec991dc32" CvElementArea="226, 970, 164, 59" CvType="InputBox" DesignTimeRectangle="229, 974, 159, 54" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Show more certifications' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Show more certifications' tag='BUTTON' type='' class='artdeco-button artdeco-button--muted artdeco-button--icon-right artdeco-button--2 artdeco-button--tertiary ember-view expandable-list__button expandable-list__button--standard expandable-list__button--r4-visual-refresh' aaname='                       Show more ' check:innerText='Show more' /&gt;" Guid="090aa81a-a078-447e-a5cb-496afd9435a8" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NExtractData.NextLink>
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADTNHwEBlC1vabz_drfVKRIecTbSRio0aVw?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" DesignTimeRectangle="103, -7181, 1405, 10496" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='profile-container' tag='DIV' /&gt;" Guid="4948dc2b-4ad6-485a-a753-6e7701ddb060" InformativeScreenshot="6cd76c4105a8519bde02cda0d0949cec.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zahid Abdullayev' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <Assign sap:VirtualizedContainerService.HintSize="452.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strCertificates]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[String.Join(Environment.NewLine, Certificates.AsEnumerable().Select(Function(row) row("Certificates").ToString()))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="IntermediateOutputs\Certificates.txt" sap:VirtualizedContainerService.HintSize="452.6666666666667,168.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_4" Text="[strHonors + Environment.NewLine+strCertificates]" />
+            <uix:NGetText DisplayName="Get Text 'Personal Information'" sap:VirtualizedContainerService.HintSize="452.6666666666667,184.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="b5e6fa69-1e31-4c80-a809-d9559ae10dae" TextString="[strLinkedInLink]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/profile/AEMAADOyw-8Bo7ZarNABsUlU7slpgKWRZU9YYJs?project=1425894674&amp;trk=SEARCH_CONTEXTUAL" CVScreenId="3eb2d4a8-0f20-4eac-a204-12cad2582d02" DesignTimeRectangle="205, 1281, 421, 28" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl parentid='profile-container' tag='SPAN' type='' class='' /&gt;" Guid="984d4598-9e0c-4ddd-8b8d-ec4ebaa1b60f" ImageBase64="" InformativeScreenshot="4ea97b0da43876e019ad9b1d0cbfe5cf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Kamran Aliyev' /&gt;" SearchSteps="FuzzySelector" Version="V4">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="3eb2d4a8-0f20-4eac-a204-12cad2582d02" DesignTimeRectangle="133, 1168, 1345, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' class='rrTtOcDbxggRzIuVjQpcCgqDoyLKLJiKjkdc personal-info__title' parentid='profile-container' tag='H2' aaname='     Personal Information   ' check:innerText='Personal Information' /&gt;" Guid="0d4fa302-5c16-4033-9130-0c6f2004ee5e" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 2582, 1550" BrowserType="Chrome" IconBase64="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" Selector="&lt;html app='chrome.exe' url='https://www.linkedin.com/talent/profile/AEMAADOyw-8Bo7ZarNABsUlU7slpgKWRZU9YYJs?project=1425894674&amp;amp;trk=SEARCH_CONTEXTUAL' /&gt;" Title="LinkedIn Talent Solutions" Url="[ProfileLink]" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <Assign sap:VirtualizedContainerService.HintSize="548.6666666666666,118" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strCandidateData]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">["Here is Scraped LinkedIn profile: 
+About section: " +strSummary +strExperience +Environment.NewLine +  "Here are the skills of the candidate: " + strRequirements + "Here are cerificates: " + strCertificates]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="548.6666666666666,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[strCandidateData]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,29 @@
+Objective: Evaluate the candidate's suitability for the position based on their LinkedIn profile, requirements, and responsibilities. The evaluation should be scored on a scale of 1-100, with a score above 80 indicating a strong match for the position. We can provide you information in different languages but you output everything in Azerbaijani.
+
+Instructions:
+
+Evaluation Criteria:
+
+Experience (40%): Assess the relevance and duration of the candidate’s work experience, focusing on experience related to the position.
+Education (10%): Evaluate the candidate’s educational background in relation to the job requirements.
+Skills (30%): Compare the candidate’s skills with the required skills for the position.
+Certifications (10%): Review any relevant certifications that enhance the candidate’s qualifications.
+Achievements (10%): Consider notable achievements or contributions that are relevant to the position.
+Scoring:
+
+Assign scores for each criterion based on the degree of alignment between the candidate’s profile and the job requirements.
+Apply the following weights: Experience (40%), Education (10%), Skills (30%), Certifications (10%), Achievements (10%).
+Calculate the total score out of 100.
+Final Assessment:
+
+Determine if the candidate meets or exceeds the minimum threshold of 80 points.
+Provide a summary of the candidate’s strengths and areas for improvement.
+Deliverables:
+
+A detailed evaluation report including the total score and a breakdown of the scores for each criterion.
+A recommendation on whether the candidate should be considered for the position based on the evaluation.
+Ensure the evaluation is performed in Azerbaijani.
+Note:
+
+Apply strict logic and objective analysis to ensure fairness and accuracy in the evaluation.
+Maintain consistency to ensure reliable and valid assessments:

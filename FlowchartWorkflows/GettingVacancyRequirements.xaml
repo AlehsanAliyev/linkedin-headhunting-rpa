@@ -1,0 +1,176 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GettingVacancyRequirements" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="DataRowVacancy" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="PositionName" Type="OutArgument(x:String)" />
+    <x:Property Name="strBooleanPrompt" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1283.3333333333333,1316</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GettingVacancyRequirements_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GettingVacancyRequirements" sap:VirtualizedContainerService.HintSize="512,1251.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strRequirements" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtExtractRequirements" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="450,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PositionName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DataRowVacancy("PositionName").ToString.Replace("Daimi", "").Replace("Tam gün", "")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[DataRowVacancy(&quot;PositionName&quot;)]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: New Tab" sap:VirtualizedContainerService.HintSize="450,644" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="50cfb49a-ae32-4fff-9da8-a12d4b48d25c" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,392.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="354,116.66666666666667" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[DataRowVacancy(&quot;PositionURL&quot;).ToString]" Version="V4" />
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtExtractRequirements]" DisplayName="Extract Table Data 'Extract Table Data'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Requirements'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="354,185.33333333333334" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="50cfb49a-ae32-4fff-9da8-a12d4b48d25c" Version="V4">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://careers.abb-bank.az/vakansiyalar/v2/2838" ContentHash="44a5FiAUcUCuRI2ROaXoJg" DesignTimeRectangle="402, 390, 1169, 1116" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl tag='ARTICLE' /&gt;" Guid="e6ca19f1-713d-41cf-9103-d29895d08cd3" InformativeScreenshot="591c5c010ef592050eddcb58ca2469ac.png" Reference="sio68L41CUCstWigpbHB_A/N_OqOMZSYU29BmoYkpY5gQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ABB - Müasir, Faydalı, Universal' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 2582, 1550" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="e18475bfc709c0be01712a07605af7ad.png" Selector="&lt;html app='chrome.exe' url='https://careers.abb-bank.az/vakansiyalar' /&gt;" Title="New Tab" Url="https://careers.abb-bank.az/vakansiyalar" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign sap:VirtualizedContainerService.HintSize="450,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strRequirements]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[String.Join(Environment.NewLine, dtExtractRequirements.AsEnumerable().Select(Function(row) row("Requirements").ToString()))]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strBooleanPrompt]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[strBooleanPrompt+strRequirements]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

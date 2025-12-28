@@ -1,0 +1,382 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GPTBooleanGenerator" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BooleanPrompt" Type="InArgument(x:String)" />
+    <x:Property Name="BooleanResponse" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1283.333333333333,2905.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GPTBooleanGenerator_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GPTBooleanGenerator" sap:VirtualizedContainerService.HintSize="1158,2840.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: ChatGPT" sap:VirtualizedContainerService.HintSize="1096,2478" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="b89987eb-5010-457b-a287-5b6f580e95a2" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1062,2227.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="idxNum" />
+              <Variable x:TypeArguments="x:String" Name="ChatGPTResponse" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Welcome back'" sap:VirtualizedContainerService.HintSize="1000,604" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="b89987eb-5010-457b-a287-5b6f580e95a2" Timeout="5" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,312" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayAfter="1" DisplayName="Click 'Stay logged out'" sap:VirtualizedContainerService.HintSize="388,221.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b89987eb-5010-457b-a287-5b6f580e95a2" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" CVScreenId="5074ef97-5454-4048-bd09-acde563ed6fb" DesignTimeRectangle="1216, 1065, 151, 30" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='radix-:r4:' tag='A' type='' class='cursor-pointer font-semibold text-token-text-secondary underline sm:text-sm' aaname='Stay logged out' check:innerText='Stay logged out' /&gt;" Guid="edc06fe1-274e-4b02-96de-41befb6edae4" InformativeScreenshot="14ae3242dcabecc0b05cb66be59bf3de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Visible">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="5074ef97-5454-4048-bd09-acde563ed6fb" DesignTimeRectangle="1052, 966, 480, 69" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Sign up' parentid='radix-:r4:' tag='BUTTON' type='' class='btn relative btn-secondary btn-large w-full mb-5' check:innerText='Sign up' /&gt;" Guid="1cf7a7e3-c57c-403a-8ada-92017d4b8911" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,106.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" CVScreenId="5b105888-57ae-43bd-93e4-020cc3013097" DesignTimeRectangle="1173, 663, 237, 48" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='radix-:r1:' tag='P' type='' class='mb-1 text-center text-2xl font-semibold' aaname='Welcome back' check:innerText='Welcome back' /&gt;" Guid="f07fe83f-ec2c-4c86-a895-ec8559ceb2d9" InformativeScreenshot="2f5948a0159cfbfb75e401dc57ba4f86.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1052, 717, 480, 126" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' parentid='radix-:r1:' tag='P' class='mb-6 text-center text-lg text-token-text-secondary' aaname='Log in or sign up to get smarter responses, upload files and images, and more.' check:innerText='Log in or sign up to get smarter responses, upload files and images, and more.' /&gt;" Guid="860f46f1-f567-46a5-88e8-0dfe902e12f0" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1000,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,308" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="354,220" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b89987eb-5010-457b-a287-5b6f580e95a2" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" CVScreenId="806d52eb-3792-443e-bcf1-93151ab2bf50" CvElementArea="713, 1404, 1157, 81" CvType="InputBox" DesignTimeRectangle="749, 1416, 1044, 60" DesignTimeScaleFactor="1.5" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='prompt-textarea' tag='TEXTAREA' type='' class='m-0 resize-none border-0 bg-transparent px-0 text-token-text-primary focus:ring-0 focus-visible:ring-0 max-h-[25dvh] max-h-52' placeholder='Message ChatGPT' aaname='' /&gt;" Guid="4d0185bb-dd3b-4b1f-a7e2-ca17ea975380" InformativeScreenshot="24596ffac3f87b6060651fc118cd1835.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="806d52eb-3792-443e-bcf1-93151ab2bf50" CvElementArea="713, 1404, 1157, 81" CvType="InputBox" DesignTimeRectangle="725, 1416, 1068, 60" FuzzySelectorArgument="&lt;webctrl type='' class='flex min-w-0 flex-1 flex-col pl-4' tag='DIV' aaname='' /&gt;" Guid="465468c8-dbdd-45c7-b7ac-75930849dd23" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DIV'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1000,252" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="b89987eb-5010-457b-a287-5b6f580e95a2" Text="[BooleanPrompt]" Timeout="10" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" CVScreenId="4b3922e9-b5a6-4b57-83ef-bdd10e371a65" DesignTimeRectangle="749, 1428, 1044, 36" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='P' type='' class='' aaname='fdsssfsd' /&gt;" Guid="f17fccb8-7ace-4c73-8e36-925f7d9a6023" InformativeScreenshot="f52002e76c6e3c1331ef1f6d4251b849.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1805, 1422, 48, 48" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl type='' tag='svg' class='icon-2xl' aaname='' /&gt;" Guid="a78cd3b8-164e-450c-bf4f-faf60c411cdb" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <Delay Duration="00:00:01.5000000" sap:VirtualizedContainerService.HintSize="1000,123.33333333333333" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1000,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,334" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="354,246" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V4">
+                    <uix:NKeyboardShortcuts.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="Element 'Objective: Evaluate the…'" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="716, 1118, 1152, 367" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' tag='DIV' /&gt;" Guid="ecd4ae58-e461-4617-854f-40a2195c9f78" InformativeScreenshot="05987b3c5d78187f9ca5401483c29fe1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target Accuracy="1" CVScreenId="1f95b1a4-7061-4f77-a710-1e5c96d8a8a1" DesignTimeRectangle="1805, 1422, 48, 48" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl type='' tag='svg' class='icon-2xl' aaname='' /&gt;" Guid="cbbc0636-5f68-4959-8174-039fb3b52af1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAM5SURBVGhD7Zi7buJAFIaRCBIvg3gEyhCKUOc9aBAooqQIShGFNlKKUPASqSKl3LwCDRQpEaLYzOrz2l5fjm/jY4PQ/tIvwdieOZ9n5sx4Gt1u11yS/wOdu1WBrq+vzWQyMW9vb+bz89NsNhuz3+/N758fx/ymjGvcw708I9Vl69JAvV7PPDw8mF9fX8ZWPEsd1CW1UcTWQLxZ3jJvXkvURZ1les0K6Pn5WRUkKuqmDantLBcCuru7KzW0ioq2aFOKJcm5gZjAVfZKkmiTtqWYJOcCYsKeWsQgxRZ1JtA5wHjKA5UKRFefm7KGXyIQk/EUcyZLxJSWKBKB6sxmRUVsUsxYBGINOHclrVMxIFZp7aG22+3M9/e3+09HxCjtKGJAbD00tVgszNXVlWm1Wubx8dEt1RGxRuMPAbE51OwdABqNRsiaUMQa3dCGgDTXHAnGsyZUdG0KAWlltjQYz1pQ0YznAzHBNJQHxvNyuXSfKqdgcvCBNHYFEky73RZ/e356enKftldw9+ADlc1uvO1osKPRyNzc3Pj/B4OBUxa8B5ftqWC284H4zrdVEgyKAiFtKGKPAXF4YaP39/dYcNPp1L1qHAiv3ANC4/E49Az++PhwrxYTsceAOJGx0cvLSyio2WzmXvmrJCDE2A8+u16v3SvFROwxINsF9XA4mE6n4wQ0n8/d0n9KA0L39/fONWI4Ho9uaTERuxpQlvr9vg/EfKpCIpDtkMtSHUDikLNNClmqA0hMCmXSdprqABLTtvZng6c6gMSFtaoDkTqAxK2P1uY0qjqAxM0pruJgpGqgxM8HXMWhYtVAqR942p/g6Pb21gcaDoduqY6INfUTHGtnu9fXV9NsNp1DktVq5ZbqKJjdPMeAmGDavbTdbk93jIUv6qDRcxUZT0vRzBZ0ItDFHdbjqnYPZRTcFUhOBcJVrE22iq45kjOB8DlA5YHBuYAwXX2KOUWbWcMs6NxAmMlYZ/ajrbQEILkQkGfWgCp7i7qT1pksWwFhVmm2Hppg1EWd0g4gr62BPLM5ZMKWGYo8Sx3RjaaNSwMFzZtlAvOW+c7n8IITGd485jdlXOMe7i3TG5JVgU7vrvkDusvqrqpGaoEAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:VerifyExecutionOptions.Target>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NKeyboardShortcuts.VerifyOptions>
+                  </uix:NKeyboardShortcuts>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Objective: Evaluate the…'" sap:VirtualizedContainerService.HintSize="1000,228" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b89987eb-5010-457b-a287-5b6f580e95a2" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" CVScreenId="ee550e94-9576-44bd-9110-df6c23aa48e8" CvElementArea="1798, 1422, 59, 59" CvType="Icon" DesignTimeRectangle="1805, 1428, 48, 48" DesignTimeScaleFactor="1.5" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl type='' tag='svg' class='icon-2xl' aaname='' /&gt;" Guid="b586f146-0797-466a-a2e8-bedfdb8a7ba2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAM5SURBVGhD7Zi7buJAFIaRCBIvg3gEyhCKUOc9aBAooqQIShGFNlKKUPASqSKl3LwCDRQpEaLYzOrz2l5fjm/jY4PQ/tIvwdieOZ9n5sx4Gt1u11yS/wOdu1WBrq+vzWQyMW9vb+bz89NsNhuz3+/N758fx/ymjGvcw708I9Vl69JAvV7PPDw8mF9fX8ZWPEsd1CW1UcTWQLxZ3jJvXkvURZ1les0K6Pn5WRUkKuqmDantLBcCuru7KzW0ioq2aFOKJcm5gZjAVfZKkmiTtqWYJOcCYsKeWsQgxRZ1JtA5wHjKA5UKRFefm7KGXyIQk/EUcyZLxJSWKBKB6sxmRUVsUsxYBGINOHclrVMxIFZp7aG22+3M9/e3+09HxCjtKGJAbD00tVgszNXVlWm1Wubx8dEt1RGxRuMPAbE51OwdABqNRsiaUMQa3dCGgDTXHAnGsyZUdG0KAWlltjQYz1pQ0YznAzHBNJQHxvNyuXSfKqdgcvCBNHYFEky73RZ/e356enKftldw9+ADlc1uvO1osKPRyNzc3Pj/B4OBUxa8B5ftqWC284H4zrdVEgyKAiFtKGKPAXF4YaP39/dYcNPp1L1qHAiv3ANC4/E49Az++PhwrxYTsceAOJGx0cvLSyio2WzmXvmrJCDE2A8+u16v3SvFROwxINsF9XA4mE6n4wQ0n8/d0n9KA0L39/fONWI4Ho9uaTERuxpQlvr9vg/EfKpCIpDtkMtSHUDikLNNClmqA0hMCmXSdprqABLTtvZng6c6gMSFtaoDkTqAxK2P1uY0qjqAxM0pruJgpGqgxM8HXMWhYtVAqR942p/g6Pb21gcaDoduqY6INfUTHGtnu9fXV9NsNp1DktVq5ZbqKJjdPMeAmGDavbTdbk93jIUv6qDRcxUZT0vRzBZ0ItDFHdbjqnYPZRTcFUhOBcJVrE22iq45kjOB8DlA5YHBuYAwXX2KOUWbWcMs6NxAmMlYZ/ajrbQEILkQkGfWgCp7i7qT1pksWwFhVmm2Hppg1EWd0g4gr62BPLM5ZMKWGYo8Sx3RjaaNSwMFzZtlAvOW+c7n8IITGd485jdlXOMe7i3TG5JVgU7vrvkDusvqrqpGaoEAAAAASUVORK5CYII=" InformativeScreenshot="70e054674181fea99f91821ff7e02aff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="749, 1362, 1044, 108" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" Guid="cd0f56fb-02e3-47e2-86e2-aa56c16654fe" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'SVG'" sap:VirtualizedContainerService.HintSize="1000,814.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="b89987eb-5010-457b-a287-5b6f580e95a2" Timeout="30" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,569.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[idxNum]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">2</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NGetText DisplayName="Get Text 'The capital of England …'" sap:VirtualizedContainerService.HintSize="434,190.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="b89987eb-5010-457b-a287-5b6f580e95a2" TextString="[BooleanResponse]" Version="V4">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="716, 459, 1152, 182" DesignTimeScaleFactor="1.5" FullSelectorArgument="[string.Format(&quot;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;div' idx='{0}' tag='DIV' /&gt;&quot;, idxNum)]" Guid="cbe1f070-d89f-4e21-bf7c-b2e9116286a3" ImageBase64="" InformativeScreenshot="358895958aed02ff41101138ab5efa2b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="3198b214-3c92-4d57-a674-8e15e5eb2cf5" CvTextArea="105, 249, 207, 25" CvTextArgument="ChatGPT 4o mini" CvType="Text" DesignTimeRectangle="107, 240, 206, 42" FuzzySelectorArgument="&lt;webctrl parentid='radix-:rb:' tag='DIV' type='' class='text-token-text-secondary' aaname='ChatGPT ' check:innerText='ChatGPT 4o mini' /&gt;" Guid="615d29af-2211-4a6f-a4ca-985368054171" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,171.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[BooleanResponse]" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,106.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable Accuracy="1" BrowserURL="https://chatgpt.com/" DesignTimeRectangle="1803, 1426, 52, 52" DesignTimeScaleFactor="1.5" ElementType="Icon" Guid="0f836e19-846f-4af4-a2e1-d199ed7fe93b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAL6SURBVGhD7ZjLyvIwEED/N1IRF+JCBRde8IK6EF0IXt//CfJxhIQ2Tps2nVaRf3FA23SSkzTJNP9arZb5Jf4LfTuqQr1ez0wmE7Ner83hcDDn89ncbjfzeDxe8Jtr3KMMZXlGihVLZaFut2um06k5nU7m+XxGwbPEIJZURxmihehZepmelxoZA7GIWWXUooTm87mqiA+xqUOqO0QpocFgUOnVKgt1UafUliwKCzGB6xyVLKiTuqU2SRQSYsJKlTUJbZDa5hMU+gYZSxGpXCGGWgr8SUKvX6YQk/ETcyYEbcpbKDKFmlzNykLbpDaDKMQeIAX6JrL2qTchdmntV+1yuZjr9Srei4U2ShnFmxCphxQgltVqZdrt9gvt2MTz258SIjnUHB2pQk0p2uontCkhzT1HkrFoSvl7U0pIa2XLk7FoSfkrnhNigkkPlKWIjGWz2YgxypJcHJyQRlYgyXQ6HfG3RWOkktmDE6oamN62sSyz2cwMh0P3n99cS5aBqiOV7EgnxHe+VLgIWTLc84W4pi1F220cJ8ThhVQ4xPF4dMEsyUxDEgJpp49dlGi7jeGEOJGRCofYbrcuGCwWi9T9LCHwpfb7fep+UWi7jeGEYjfU+/1u+v3+K8ZyuXy7nycEdAD3iBHbBp6zdVQWChES0kAUin3lQjQhJL5ysYtCiCaExEWhyrKdRxNC4rKtsWNLNCEkbqx1HYg0ISSmPlrJqU8TQmJyCnUcjNQtlPn5AHUcKtYtlPuBp/0JDuPx2MUfjUZimVhoa+4nOGivdjbX45Bkt9uJZWJJrm6WNyEmmPYoffQYC37qoNFSx4qnhb+yJckU+rnDeqgre6hCMiuQyBWCOvamWPw9RyIoBN8gVUQGCgkBQ/2JOUWdodcsSWEhYDI2ufpRV94CIFFKyMIeUOdoETtrnwkRJQTs0qQemmLEIqaUARQlWshCcsiErfIq8iwx/EQzhspCSehZJjC9zHc+hxecyNDzwG+ucY8ylK0yGhKqQp+nZf4A/JieG5+x8IYAAAAASUVORK5CYII=" InformativeScreenshot="f2a8736858850d7ccf4a0dad00c2ea89.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Image" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="b0d2c142-a53d-42ca-9238-9ec3d943c637" DesignTimeRectangle="725, 1422, 1068, 60" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='prompt-textarea' tag='DIV' type='' class='ProseMirror ProseMirror-focused' aaname='' /&gt;" Guid="555f8f4e-f9ea-4f3c-bca8-519eaa2e922f" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 2582, 1550" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="319ade2b18a0c131189616b56ed45241.jpg" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" Title="ChatGPT" Url="https://chatgpt.com/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <Assign sap:VirtualizedContainerService.HintSize="1096,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[BooleanResponse]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[BooleanResponse.Replace("ChatGPT", "")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="notes.txt" sap:VirtualizedContainerService.HintSize="1096,158" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[BooleanResponse]" />
+  </Sequence>
+</Activity>

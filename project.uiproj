@@ -1,0 +1,6 @@
+{
+  "Name": "LinkedInRecruiterProject",
+  "ProjectType": "Process",
+  "Description": "This project involves web scraping ABB's website for IT-related vacancies, generating Boolean expressions for LinkedIn Recruiter Lite with GPT, and using them to search for candidates by skills, location, and keywords. The goal is to find 8-50 candidates, download their LinkedIn info to PDF, and then grade them using GPT.",
+  "MainFile": "Main.xaml"
+}

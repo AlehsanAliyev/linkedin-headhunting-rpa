@@ -1,0 +1,6 @@
+No other words just Please provide a boolean expression for the following category, with the most critical keywords listed first, all in one line. Output in English. Use "AND" to combine "Must have" keywords and "OR" to combine "Can have" keywords:
+
+- Skills(Must have skills only) - ignore work experience and degree part here. Mention 4 AND also some OR skills here. try to make same purpose skills into OR. Similar purpose skills should be in parentheses separated by OR)
+
+Exclude words like  "Ali təhsillə", "iş təcrübəsi", "programming language"(if Java write "Java" not "Java programming language", "Obyekyönümlü", shortly anything non-English and not suitable for input. 
+The keywords should be concise and suitable for input into LinkedIn Recruiter:

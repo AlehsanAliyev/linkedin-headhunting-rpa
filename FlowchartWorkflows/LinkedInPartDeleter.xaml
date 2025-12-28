@@ -1,0 +1,158 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LinkedInPartDeleter" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1283.3333333333333,1011.3333333333335" sap2010:WorkflowViewState.IdRef="LinkedInPartDeleter_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LinkedInPartDeleter" sap:VirtualizedContainerService.HintSize="960,874.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: LinkedIn Talent Solutions" sap:VirtualizedContainerService.HintSize="484,852" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="5e6f51e9-731d-4806-9967-3b539570f38f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,606" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Clear all'" sap:VirtualizedContainerService.HintSize="416,234.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5e6f51e9-731d-4806-9967-3b539570f38f" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/talent/hire/1425894674/discover/recruiterSearch?searchContextId=61710d9f-f5ff-41b9-9c99-b6293e802861&amp;searchHistoryId=20383305538&amp;searchRequestId=221af66b-ed1c-4ebb-9807-e3ae66d22be7&amp;start=0&amp;uiOrigin=FACET_SEARCH" DesignTimeRectangle="725, 408, 76, 29" DesignTimeScaleFactor="1.5" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Clear search' tag='BUTTON' type='button' class='left-rail__header--icon-button t-14 t-bold t-black--light' aaname='Clear search' check:innerText='Clear all' /&gt;" Guid="9d380a09-4ada-4f8e-b99d-b9f381e1cee8" InformativeScreenshot="0a49114a697315319f081ba083877603.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='LinkedIn Talent Solutions' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="324, 405, 222, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='ember70416' tag='SPAN' type='' class='left-rail__header--saved-search-name t-16 t-bold' aaname='                         Showing results for                       ' check:innerText='Showing results for' /&gt;" Guid="b10b6781-726b-4990-8382-51df5a0a6857" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,183.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Deleting Previous Search&quot;]" />
+            <Delay Duration="00:00:08.5000000" sap:VirtualizedContainerService.HintSize="416,121.33333333333333" sap2010:WorkflowViewState.IdRef="Delay_3" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 2582, 1550" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARwSURBVGhD7ZpZbExRGMdr3/et9gjhwfZAPHgRD4QnXghPPHmj00pokVgTW0SCSMSW2COh1pnpWEqQagmtXTWxtIIgSqIPRD7ff9wrx8z3nXvvjIYr/sk/mUxP29//zHfO/c5pc4gIjrDr2WERWMGc48KHVREECNPMp6oeAUKt/wFMxave0PJjj2jyujLqO7+E+iz44d7s3AVx6sWeuP4aLT3+kKJ3XjvflZ2yDlD7voFWMPTwRRep//wE9WNr8D3hvDj1yItRd/agxeeo6PgDes4/I1NlFWBztCYJPoChg8J3Y3dNOkoDCxO0Nlbt/NRgyijA/dpPNIXLBODZwneJRKkzuxN7/IYrgT+NwAEAP8KZ9d8J3zFyNum+hSVUVffR+W3eChSgseE7sNvnn6XeRXHfIXwHwGL1Az92xWVaduwhXXvynl4Y5YDSuMrvYdGOWlmqwrfLP0Nt2bkc4pmPcvIdwKvmhy2+QEeu1zmjvXWwvI76cblI8HAb9riNl53RunwFwG5jg5+78zZ9bPjqjPav+oYvNGvXTRG+df5palVwmlbFHzujZXkGQOnYtsq8A3edkZlr3qFKEb4lu8eSGJfSZ2dkujwD4CFlm3lJn758ox333tGE4hoac7Q6abzGe5pm7r6RBg+3KDhFK+OPnFHp8gygPWFR81rZzE48/wmeanxNEsqpV1EsDb45uyt/CpqsAdDbSPDYbbQFi1mWwE1rn8S+ihdp8M3YTReeohN3XzmjfpU1ABozCR5bpSazbDRjjKYhq8+nwTddeJIiJ+S1Zg2gdZXY5zVJwJI1FRTfS4Nvwh69qdQZ8ausASR4PGHxkNIkwUrWdKnmXRp8jmNJ1gASPNoD8wmbqmxL6AMvZgk+cADsMBI8ehubslnEriT4jAJI8GjMvJTJNmpKgg8cAJLg0VX66dkxy2Y54bXXzENP+akrwcOSrAEkeLTE6CobS6U1b0V4WJI1wPQtFWI/j5a4sZTH+70En9E2itsD6TCCfr6xNHBNQgyAYJKsAXD1oZ2k0M9rMhetZE17uZWQ4OHiTFoJCFcf0jEQhxE0YJIkaNOSsP93WhoV4fG+Js8A62LV1IXhAZ56DMRhRJIEbVrStD3lIjyslQ/kGQCzPKAw4cAb51eYT1I4jKRKgjadqjmHb4ngMGYfW6smzwAQLp0kePcYOIMPI2Y5SdCmXaFsbDMPLy/RDzOQrwCA0+B/nKLOJA8j6OchCdo0hAWr1bxrbes05auEcGNmgzePgYO5n8/l8cN2VdLI/fd/QuP1UH6v58Yr6lZp2qt0XFkDBIVvwUYvb/bzWl9jM+Bvv/T3dxc1QBjgITHAn4JHzfspG1NigNm8v9vgcWOGHQSXTt2XxLKGx6x77TaaxABTt5Z5wrvCa9zb4OojKLwLHnTWTYkBDpTX+oJPFfoVPDUnbL8qAsP4GsZovU1QqYt4f0VtIPg/JTUAtI9DTNpWlnzS/o3wkDVAGPRPBAj9vxqE/p893BBh+iTAysyU8x0GSbghRqSROwAAAABJRU5ErkJggg==" InformativeScreenshot="fdebe5f6c8a339592f62d71441bef9c6.jpg" Selector="&lt;html app='chrome.exe' title='LinkedIn Talent Solutions' /&gt;" Title="LinkedIn Talent Solutions" Url="https://www.linkedin.com/talent/hire/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
